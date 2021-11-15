@@ -9,6 +9,8 @@ import ItemView from "../view/ItemView.vue";
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
+  // url 해쉬(#)값 제거 'mode history'
+  mode: "history",
   routes: [
     {
       path: "/",

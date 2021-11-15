@@ -16,4 +16,9 @@ export default {
 </script>
 
 <style>
+body {
+  font-family: "Nanum Gothic", sans-serif;
+  padding: 0;
+  margin: 0;
+}
 </style>

@@ -5,25 +5,18 @@
 </template>
 
 <script>
-import axios from "axios";
+import { fetchNewsList } from "../api/index.js";
 
 export default {
-  data: function () {
+  data() {
     return {
       users: [],
     };
   },
-  created: function () {
-    // new Promise() 기반으로서 다음을 반환
-    let vm = this;
-    axios
-      .get("https://api.hnpwa.com/v0/news/1.json")
-      .then(function (response) {
-        vm.users = response.data;
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+  created() {
+    fetchNewsList()
+      .then((response) => (this.users = response.data))
+      .catch((error) => console.log(error));
   },
 };
 </script>

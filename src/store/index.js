@@ -22,24 +22,32 @@ export const store = new Vuex.Store({
     },
   },
   actions: {
-    FETCH_NEWS(context) {
+    // (클릭) 🛠Rectoring 이전 (ES6+, 구조 분해 문법(Destructuring) 적용 이전)
+    // FETCH_JOBS(context) {
+    //   fetchJobsList()
+    //     .then((response) => {
+    //       context.commit("SET_JOBS", response.data);
+    //     })
+    //     .catch((error) => console.log(error));
+    // },
+    FETCH_NEWS({ commit }) {
       fetchNewsList()
-        .then((response) => {
-          context.commit("SET_NEWS", response.data);
+        .then(({ data }) => {
+          commit("SET_NEWS", data);
         })
         .catch((error) => console.log(error));
     },
-    FETCH_JOBS(context) {
+    FETCH_JOBS({ commit }) {
       fetchJobsList()
-        .then((response) => {
-          context.commit("SET_JOBS", response.data);
+        .then(({ data }) => {
+          commit("SET_JOBS", data);
         })
         .catch((error) => console.log(error));
     },
-    FETCH_ASK(context) {
+    FETCH_ASK({ commit }) {
       fetchAskList()
-        .then((response) => {
-          context.commit("SET_ASK", response.data);
+        .then(({ data }) => {
+          commit("SET_ASK", data);
         })
         .catch((error) => console.log(error));
     },

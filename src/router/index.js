@@ -28,8 +28,9 @@ export const router = new VueRouter({
       path: "/jobs",
       component: JobsView,
     },
+    // 동적 세그먼트는 콜론으로 시작
     {
-      path: "/user",
+      path: "/user/:id",
       component: UserView,
     },
     {

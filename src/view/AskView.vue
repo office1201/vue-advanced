@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="item in this.$store.state.ask" v-bind:key="item.id">
+    <div v-for="item in fetchedAsk" v-bind:key="item.id">
       {{ item.title }}
     </div>
   </div>
@@ -8,6 +8,8 @@
 
 <script>
 // import { fetchAskList } from "../api/index.js";
+// import { mapState } from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   // data() {
@@ -15,6 +17,12 @@ export default {
   //     ask: [],
   //   };
   // },
+  computed: mapGetters(["fetchedAsk"]),
+  // #1
+  // computed:
+  // mapState({
+  // ask: (state) => state.ask,
+  // }),
   created() {
     this.$store.dispatch("FETCH_ASK");
     // fetchAskList()

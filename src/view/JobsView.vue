@@ -5,23 +5,23 @@
     </div> -->
     <ul class="news-list">
       <li
-        v-for="item in this.$store.state.jobs"
-        v-bind:key="item.id"
+        v-for="job in this.$store.state.jobs"
+        v-bind:key="job.id"
         class="post"
       >
         <!-- 포인트 영역 -->
         <div class="points">
-          {{ item.points }}
+          {{ job.points || 0 }}
         </div>
         <!-- 기타 영역 -->
         <div>
           <p class="news-title">
-            <a v-bind:href="item.url">{{ item.title }}</a>
+            <a v-bind:href="job.url">{{ job.title }}</a>
           </p>
           <small class="link-text">
-            {{ item.time_ago }} by
-            <a v-bind:href="item.url">
-              {{ item.domain }}
+            {{ job.time_ago }} by
+            <a v-bind:href="job.url">
+              {{ job.domain }}
             </a>
           </small>
         </div>

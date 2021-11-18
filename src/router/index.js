@@ -18,14 +18,17 @@ export const router = new VueRouter({
     },
     {
       path: "/news",
+      name: "news",
       component: NewsView,
     },
     {
       path: "/ask",
+      name: "ask",
       component: AskView,
     },
     {
       path: "/jobs",
+      name: "jobs",
       component: JobsView,
     },
     // 동적 세그먼트는 콜론으로 시작
